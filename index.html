@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Book store</title>
+</head>
+
+<body onload="onInit()">
+    <div class="container">
+        <div class="details-container" hidden>
+            <button class="close-modal" onclick="closeModal()">X</button>
+            <div class="book-details"></div>
+        </div>
+        <ul class="book-list">
+        </ul>
+        <div class="add-btn">
+            <button onclick="onChangePage (-1)" class="btn-change-page">Prev Page</button>
+            <button class="btn-add-book" onclick="onAddBook()"> Add book! </button>
+            <button onclick="onChangePage(1)" class="btn-change-page">Next Page</button>
+        </div>
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="book-service.js"></script>
+    <script src="book-controller.js"></script>
+</body>
+
+</html>
