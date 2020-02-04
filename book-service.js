@@ -1,7 +1,7 @@
 'use strict'
 
 var gBooks = createBooks()
-var booksInPage = 3;
+var booksInPage = 4;
 var gCurrPage = 1;
 
 // console.log(gBooks);
@@ -39,10 +39,10 @@ function removeBook(bookId) {
     saveToStorage('books', gBooks);
 }
 
-function addBook(name, price,bookImg) {
+function addBook(name, price, dets, img) {
     if (!name || !price) return null
-    if (!bookImg) bookImg = 'img/noPicAvailable.png'
-    var newBook = createBook({ name: name, price: price, img: bookImg })
+    if (!img) img = 'img/noPicAvailable.png'
+    var newBook = createBook({ name: name, price: price, details: dets, img: img })
     gBooks.push(newBook)
     saveToStorage('books', gBooks);
     return gBooks
@@ -54,7 +54,7 @@ function updateBook(id, price) {
     })
     book.price = price
     saveToStorage('books', gBooks);
-   
+
 }
 
 
@@ -89,6 +89,7 @@ function getBooksForDisplay() {
 
 
 function changePage(diff) {
+
     gCurrPage += diff;
     var lastPage = Math.ceil(gBooks.length / booksInPage);
 
