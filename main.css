@@ -131,6 +131,7 @@ h5 {
 .page-bottom {
     justify-content: space-around;
     padding: 20px;
+    flex-wrap: wrap
 }
 
 .book-img {
@@ -145,4 +146,8 @@ ul {
 
 .book-card {
     height: 30px;
+}
+
+.card-container {
+    flex-wrap: wrap;
 }

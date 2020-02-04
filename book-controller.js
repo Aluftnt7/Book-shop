@@ -11,7 +11,7 @@ function renderBooks() {
     var strHTMLs = books.map(function(book) {
         return `
         
-        <div class="card rounded mx-auto " style="width: 15rem; height : 700px; opacity: 0.85;
+        <div class="card rounded mx-auto " style="width: 15rem; height : 700px; opacity: 0.85; 
         ">
         <img src="${book.img}" class="book-img card-img-top" alt="...">
         <div class="card-body">
@@ -55,7 +55,11 @@ function onRemoveBook(bookId) {
 function onAddBook() {
     //TODO make this work in one click
     var elInput = document.querySelector('.add-input');
-    (elInput.style.display === 'none') ? elInput.style.display = 'block': elInput.style.display = 'none';
+    (elInput.style.display === 'none') ? elInput.style.display = 'block': elInput.style.display = 'none'
+    document.querySelector('#input-name').value = ''
+    document.querySelector('#input-price').value = ''
+    document.querySelector('#input-dets').value = ''
+    document.querySelector('#input-img').value = ''
 
 }
 
